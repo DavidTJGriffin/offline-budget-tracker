@@ -6,7 +6,6 @@ const DATA_CACHE_NAME = 'data-cache-v2';
 const FILES_TO_CACHE = [
     '/',
     '/index.html',
-    '/favicon.ico',
     '/manifest.json',
     '/css/style.css',
     '/js/index.js',
