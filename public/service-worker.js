@@ -1,5 +1,3 @@
-// Uncomment the lines below to set up the cache files
-
 const CACHE_NAME = 'my-site-cache-v2';
 const DATA_CACHE_NAME = 'data-cache-v2';
 
