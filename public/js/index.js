@@ -106,7 +106,9 @@ function sendTransaction(isAdding) {
   }
 
   // add to beginning of current array of data
+  console.log(transactions);
   transactions.unshift(transaction);
+
 
   // re-run logic to populate ui with new record
   populateChart();
