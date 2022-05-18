@@ -6,7 +6,7 @@ This app lets you add and subtract transactions to allow you to budget.
 
 ## Website
 
-You can access the deployed website here:
+Deployed app:
 <br>
 https://whispering-meadow-31089.herokuapp.com/
 
