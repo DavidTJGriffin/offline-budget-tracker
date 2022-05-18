@@ -7,7 +7,7 @@ request.onupgradeneeded = function (event) {
 
     const db = event.target.result;
 
-    db.createObjectStore('budget_add', { autoIncrement: true });
+    db.createObjectStore('add_budget', { autoIncrement: true });
 };
 
 
@@ -31,10 +31,10 @@ request.onerror = function (event) {
 function saveRecord(record) {
     console.log('save record function ocurred')
 
-    const transaction = db.transaction(['budget_add'], 'readwrite');
+    const transaction = db.transaction(['add_budget'], 'readwrite');
 
 
-    const budgetObjectStore = transaction.objectStore('budget_add');
+    const budgetObjectStore = transaction.objectStore('add_budget');
 
 
     budgetObjectStore.add(record);
@@ -43,10 +43,10 @@ function saveRecord(record) {
 
 function uploadTransaction() {
 
-    const transaction = db.transaction(['budget_add'], 'readwrite');
+    const transaction = db.transaction(['add_budget'], 'readwrite');
 
 
-    const budgetObjectStore = transaction.objectStore('budget_add');
+    const budgetObjectStore = transaction.objectStore('add_budget');
 
 
     const getAll = budgetObjectStore.getAll();
