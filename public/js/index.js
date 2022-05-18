@@ -79,6 +79,7 @@ function populateChart() {
 }
 
 function sendTransaction(isAdding) {
+  console.log('Send transaction function' + isAdding)
   let nameEl = document.querySelector("#t-name");
   let amountEl = document.querySelector("#t-amount");
   let errorEl = document.querySelector(".form .error");
@@ -113,6 +114,7 @@ function sendTransaction(isAdding) {
   populateTotal();
   
   // also send to server
+  console.log('just before fetch')
   fetch("/api/transaction", {
     method: "POST",
     body: JSON.stringify(transaction),
@@ -122,9 +124,11 @@ function sendTransaction(isAdding) {
     }
   })
   .then(response => {    
+    console.log('returning a json' + response)
     return response.json();
   })
   .then(data => {
+    console.log('checking data' + data)
     if (data.errors) {
       errorEl.textContent = "Missing Information";
     }
@@ -135,6 +139,7 @@ function sendTransaction(isAdding) {
     }
   })
   .catch(err => {
+    console.log('catching an err if fetch failed')
     // fetch failed, so save in indexed db
     saveRecord(transaction);
 
@@ -145,6 +150,7 @@ function sendTransaction(isAdding) {
 }
 
 document.querySelector("#add-btn").onclick = function() {
+  console.log('Clicked add button');
   sendTransaction(true);
 };
 

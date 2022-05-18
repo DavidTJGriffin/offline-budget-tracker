@@ -29,6 +29,7 @@ request.onerror = function (event) {
 
 
 function saveRecord(record) {
+    console.log('save record function ocurred')
 
     const transaction = db.transaction(['budget_add'], 'readwrite');
 
